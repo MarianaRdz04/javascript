@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mariana Rodriguez | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>My Home Page</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>   
+</nav>
+
+<main>
+    <div class="intro">
+        <h2>Hello You! :)</h2>
+        <hr>
+        <p id="welcomeMessage">Welcome to my website.</p>
+        <p>I'm Mariana Rodriguez and this is my Home Page for my class.</p>
+    </div>
+
+    <div class="content">
+        <p><strong>Professional Goals</strong></p>
+        <hr>
+
+        <p>- Fluent in English, Spanish, and French (still learning)</p>
+        <p>- High school graduate</p>
+        <p>- Microsoft Certified</p>
+        <p>- Achieved second place in school technology fair</p>
+
+        <img src="../images/me.jpeg" alt="Photo of Mariana Rodriguez">
+        <p>I want to become a <span class="highlight">web development engineer!</span></p>
+        <p>Follow me on my instagram: <a href="https://www.instagram.com/mariana._.rr15/" target="_blank">mariana._.rr15</a>.</p>
+    </div>
+</main>
+
+<footer>
+    <p>Dallas College</p>
+</footer>
+
+<script>
+    const visitorName = prompt("What is your name?");
+    alert("Welcome to my website, " + visitorName + "!");
+    document.getElementById("welcomeMessage").textContent =
+        "Welcome to my website, " + visitorName + "!";
+</script>
+
+</body>
+</html>
