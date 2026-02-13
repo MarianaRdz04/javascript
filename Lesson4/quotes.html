@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/styles.css">
+<title>Quote of the Day</title>
+</head>
+
+<body>
+<h1> Quote of the Day  </h1>
+
+<div class="section" id="quoteSection"></div>
+
+<div class="section">
+    <h2>Favorite Websites</h2>
+    <div id="websiteList"></div>
+</div>
+
+<div class="section">
+    <h2>Updated Website List</h2>
+    <div id="updatedList"></div>
+</div>
+
+<footer>
+    <h3>JavaScript Lesson 4 Assignment</h3>
+    <h4>Dallas College</h4>
+</footer>
+
+<script>
+
+// Array1: Quotes
+var quotes = [
+    "See the good thing! :)",
+    "Stay positive! :D",
+    "Work hard! :)",
+    "Never give up! ;)",
+    "Dream big! :)"
+];
+
+var userNumber = Number(prompt("Enter a number:"));  // Ask user for number
+var index = userNumber % 5; // Use modulus
+var selectedQuote = quotes[index]; // Get quote
+
+// Display quote
+document.getElementById("quoteSection").innerHTML =
+    "<h2>Your Quote:</h2><p class='highlight'>" + selectedQuote + "</p>";
+
+
+// Array2: Websites
+var websites = [
+    "https://www.spotify.com",
+    "https://www.instagram.com",
+    "https://www.github.com"
+];
+
+// Show original websites
+var websiteOutput = "";
+
+for (var i = 0; i < websites.length; i++) {
+    websiteOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
+        + websites[i] + "</a></p>";
+}
+
+document.getElementById("websiteList").innerHTML = websiteOutput;
+
+
+// Ask user for favorite website
+var newWebsite = prompt("Enter your favorite website URL (include https://):");
+
+// Add to array
+websites.push(newWebsite);
+
+// Remove first website
+websites.shift();
+
+// Display updated list
+var updatedOutput = "";
+
+for (var i = 0; i < websites.length; i++) {
+    updatedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
+        + websites[i] + "</a></p>";
+}
+
+document.getElementById("updatedList").innerHTML = updatedOutput;
+
+</script>
+
+</body>
+</html>
