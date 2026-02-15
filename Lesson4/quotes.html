@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<h1> Quote of the Day  </h1>
+<h1>Quote of the Day</h1>
 
 <div class="section" id="quoteSection"></div>
 
@@ -18,7 +18,6 @@
 </div>
 
 <div class="section">
-    <h2>Updated Website List</h2>
     <div id="updatedList"></div>
 </div>
 
@@ -29,7 +28,8 @@
 
 <script>
 
-// Array1: Quotes
+
+// Array 1: Quotes
 var quotes = [
     "See the good thing! :)",
     "Stay positive! :D",
@@ -38,24 +38,22 @@ var quotes = [
     "Dream big! :)"
 ];
 
-var userNumber = Number(prompt("Enter a number:"));  // Ask user for number
-var index = userNumber % 5; // Use modulus
-var selectedQuote = quotes[index]; // Get quote
+var userNumber = Number(prompt("Enter a number:"));
+var index = userNumber % 5;
+var selectedQuote = quotes[index];
 
-// Display quote
 document.getElementById("quoteSection").innerHTML =
     "<h2>Your Quote:</h2><p class='highlight'>" + selectedQuote + "</p>";
 
 
-// Array2: Websites
+// Array 2: Websites URLS
 var websites = [
     "https://www.spotify.com",
     "https://www.instagram.com",
     "https://www.github.com"
 ];
 
-// Show original websites
-var websiteOutput = "";
+var websiteOutput = ""; // Show original websites
 
 for (var i = 0; i < websites.length; i++) {
     websiteOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
@@ -64,25 +62,33 @@ for (var i = 0; i < websites.length; i++) {
 
 document.getElementById("websiteList").innerHTML = websiteOutput;
 
-
-// Ask user for favorite website
+// Add user favorite websites
 var newWebsite = prompt("Enter your favorite website URL (include https://):");
 
-// Add to array
-websites.push(newWebsite);
+if (newWebsite) {
 
-// Remove first website
-websites.shift();
+    
+    websites.push(newWebsite);
+    var addedOutput = "<h2>After Adding Your Website</h2>";
 
-// Display updated list
-var updatedOutput = "";
+    for (var i = 0; i < websites.length; i++) {
+        addedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
+            + websites[i] + "</a></p>";
+    }
 
-for (var i = 0; i < websites.length; i++) {
-    updatedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
-        + websites[i] + "</a></p>";
+    document.getElementById("updatedList").innerHTML = addedOutput;
+
+    websites.shift(); // Remove first website
+
+    var revisedOutput = "<h2>After Removing First Website</h2>";
+
+    for (var i = 0; i < websites.length; i++) {
+        revisedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
+            + websites[i] + "</a></p>";
+    }
+
+    document.getElementById("updatedList").innerHTML += revisedOutput;
 }
-
-document.getElementById("updatedList").innerHTML = updatedOutput;
 
 </script>
 
