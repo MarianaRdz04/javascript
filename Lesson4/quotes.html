@@ -73,20 +73,25 @@
         var newWebsite = prompt("Enter your favorite website URL (include https://):");
 
         if (newWebsite) {
-            // Add to array
-            websites.push(newWebsite);
+        websites.push(newWebsite);
 
-            // Remove first website
-            websites.shift();
-
-            // Display updated list
-            var updatedOutput = "";
-            for (var i = 0; i < websites.length; i++) {
-                updatedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
-            }
-            document.getElementById("updatedList").innerHTML = updatedOutput;
+        // Display array after adding
+        var addedOutput = "<h3></h3>";
+        for (var i = 0; i < websites.length; i++) {
+        addedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
         }
-    
+        document.getElementById("updatedList").innerHTML = addedOutput;
+
+        // This remove the first website
+        websites.shift();
+
+        // Display revised array 
+        var revisedOutput = "<h4>Deleting the First Website</h4>";
+        for (var i = 0; i < websites.length; i++) {
+        revisedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
+        }
+        document.getElementById("updatedList").innerHTML += revisedOutput;
+        }
     </script>
 
 </body>
