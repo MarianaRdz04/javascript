@@ -1,96 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/styles.css">
-<title>Quote of the Day</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Quote of the Day</title>
 </head>
-
 <body>
-<h1>Quote of the Day</h1>
 
-<div class="section" id="quoteSection"></div>
+    <h1>Quote of the Day</h1>
 
-<div class="section">
-    <h2>Favorite Websites</h2>
-    <div id="websiteList"></div>
-</div>
+    <!-- Quote Section -->
+    <div class="section" id="quoteSection"></div>
 
-<div class="section">
-    <div id="updatedList"></div>
-</div>
+    <!-- Favorite Websites -->
+    <div class="section">
+        <h2>Favorite Websites</h2>
+        <div id="websiteList"></div>
+    </div>
 
-<footer>
-    <h3>JavaScript Lesson 4 Assignment</h3>
-    <h4>Dallas College</h4>
-</footer>
+    <!-- Updated Website List -->
+    <div class="section">
+        <h2>Updated Website List</h2>
+        <div id="updatedList"></div>
+    </div>
 
-<script>
+    <footer>
+        <h3>JavaScript Lesson 4 Assignment</h3>
+        <h4>Dallas College</h4>
+    </footer>
+
+    <script>
+        
+        // Array 1: Quotes
+
+        var quotes = [
+            "See the good thing! :)",
+            "Stay positive! :D",
+            "Work hard! :)",
+            "Never give up! ;)",
+            "Dream big! :)"
+        ];
+
+        // Ask user for a number
+        var userNumber = Number(prompt("Enter a number:"));
+
+        var index = userNumber % quotes.length;
+        var selectedQuote = quotes[index];
+
+        // Show selected quote
+        document.getElementById("quoteSection").innerHTML =
+            "<h2>Your Quote:</h2><p class='highlight'>" + selectedQuote + "</p>";
 
 
-// Array 1: Quotes
-var quotes = [
-    "See the good thing! :)",
-    "Stay positive! :D",
-    "Work hard! :)",
-    "Never give up! ;)",
-    "Dream big! :)"
-];
+        
+        // Array 2: Websites
 
-var userNumber = Number(prompt("Enter a number:"));
-var index = userNumber % 5;
-var selectedQuote = quotes[index];
+        var websites = [
+            "https://www.spotify.com",
+            "https://www.instagram.com",
+            "https://www.github.com"
+        ];
 
-document.getElementById("quoteSection").innerHTML =
-    "<h2>Your Quote:</h2><p class='highlight'>" + selectedQuote + "</p>";
+        // Display original websites
+        var websiteOutput = "";
+        for (var i = 0; i < websites.length; i++) {
+            websiteOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
+        }
+        document.getElementById("websiteList").innerHTML = websiteOutput;
 
+       // Add User data
+        var newWebsite = prompt("Enter your favorite website URL (include https://):");
 
-// Array 2: Websites URLS
-var websites = [
-    "https://www.spotify.com",
-    "https://www.instagram.com",
-    "https://www.github.com"
-];
+        if (newWebsite) {
+            // Add to array
+            websites.push(newWebsite);
 
-var websiteOutput = ""; // Show original websites
+            
+            websites.shift(); // Remove first website
 
-for (var i = 0; i < websites.length; i++) {
-    websiteOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
-        + websites[i] + "</a></p>";
-}
-
-document.getElementById("websiteList").innerHTML = websiteOutput;
-
-// Add user favorite websites
-var newWebsite = prompt("Enter your favorite website URL (include https://):");
-
-if (newWebsite) {
-
-    
-    websites.push(newWebsite);
-    var addedOutput = "<h2>After Adding Your Website</h2>";
-
-    for (var i = 0; i < websites.length; i++) {
-        addedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
-            + websites[i] + "</a></p>";
-    }
-
-    document.getElementById("updatedList").innerHTML = addedOutput;
-
-    websites.shift(); // Remove first website
-
-    var revisedOutput = "<h2>After Removing First Website</h2>";
-
-    for (var i = 0; i < websites.length; i++) {
-        revisedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" 
-            + websites[i] + "</a></p>";
-    }
-
-    document.getElementById("updatedList").innerHTML += revisedOutput;
-}
-
-</script>
+            // Updated list
+            var updatedOutput = "";
+            for (var i = 0; i < websites.length; i++) {
+                updatedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
+            }
+            document.getElementById("updatedList").innerHTML = updatedOutput;
+        }
+    </script>
 
 </body>
 </html>
