@@ -70,31 +70,21 @@
         document.getElementById("websiteList").innerHTML = websiteOutput;
 
        // Add User data
-       var newWebsite = prompt("Enter your favorite website URL (include https://):");
+        var newWebsite = prompt("Enter your favorite website URL (include https://):");
 
         if (newWebsite) {
-    
-        websites.push(newWebsite);
+            // Add to array
+            websites.push(newWebsite);
 
-        // Display array after adding 
-        var addedOutput = "<h3>After Adding Your Website (4 URLs)</h3>";
-        for (var i = 0; i < websites.length; i++) {
-            addedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
-        }
-        
-        document.getElementById("updatedList").innerHTML = addedOutput;
+            // Remove first website
+            websites.shift();
 
-        // Remove the first website
-        websites.shift();
-
-        // Display 
-        var revisedOutput = "<h3>After Removing First Website (3 URLs)</h3>";
-        
-        for (var i = 0; i < websites.length; i++) {
-        revisedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
-        }
-        
-        document.getElementById("updatedList").innerHTML += revisedOutput;
+            // Display updated list
+            var updatedOutput = "";
+            for (var i = 0; i < websites.length; i++) {
+                updatedOutput += "<p><a href='" + websites[i] + "' target='_blank'>" + websites[i] + "</a></p>";
+            }
+            document.getElementById("updatedList").innerHTML = updatedOutput;
         }
     
     </script>
