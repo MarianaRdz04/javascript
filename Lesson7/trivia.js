@@ -132,13 +132,13 @@ function startQuiz() {
 
 function showScore() {
     var totalScore = startQuiz();
-    var percent = ((totalScore / 9) * 100).toFixed(2);
+    var percent = ((totalScore / 15) * 100).toFixed(2);
 
     document.getElementById("output").innerHTML +=
-        "<h2>Your Final Score: " + totalScore + " / 9</h2>" +
+        "<h2>Your Final Score: " + totalScore + " / 15</h2>" +
         "<p>Percentage: " + percent + "%</p>";
 }
-
+//This function run the program all functions
 function runProgram() {
     showDate();
     greeting();
