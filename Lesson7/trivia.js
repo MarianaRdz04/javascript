@@ -1,10 +1,22 @@
-function showDate() { //date function
+function showDate() {
+
     let today = new Date();
-    let day = today.toLocaleDateString();
-    let time = today.toLocaleTimeString();
+
+    let dayName = today.toLocaleDateString('en-US', { weekday: 'long' });
+    let monthName = today.toLocaleDateString('en-US', { month: 'long' });
+
+    let day = today.getDate();
+    let year = today.getFullYear();
+
+    let time = today.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+    });
 
     document.getElementById("date").innerHTML =
-        "Today is " + day + ". It is " + time + ".";
+        "Today is " + dayName + ", " + monthName + " " + day + ", " + year +
+        ". It is " + time.toLowerCase() + ".";
 }
 function greeting() { //greetinh function
     let name = prompt("Enter your name please:");
@@ -50,7 +62,7 @@ function getEmail() {  //email check function
     let domain = parts[1];
 
     document.getElementById("emailInfo").innerHTML =
-        "Username: " + username + "<br>Domain: " + domain;
+        "USERNAME: " + username + "<br>DOMAIN: " + domain;
 }
 
 
@@ -60,7 +72,7 @@ function quoteOfDay() {  //quote function
         "The harder your work now, the easier it will be later.",
         "Trust in yourself.",
         "Believe in yourself.",
-        "Small steps are still process."
+        "Small steps are still progress."
     ];
 
     let random = Math.floor(Math.random() * quotes.length);
