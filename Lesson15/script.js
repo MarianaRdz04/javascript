@@ -1,31 +1,33 @@
- $(document).ready(function(){
+$(document).ready(function () {
 
-       
-            $("#showStory").click(function(){
-                $("#story").slideToggle();
-            });
+    // Show / Hide Story
+    $("#showStory").click(function () {
+        $("#story").slideToggle();
+    });
 
-         
-            $("#showSkills").click(function(){
-                $("#skills").fadeToggle();
-            });
+    // Show / Hide Skills
+    $("#showSkills").click(function () {
+        $("#skills").fadeToggle();
+    });
 
-            $("h2").mouseover(function() {
-                $(this).css("color", "black");
-            });
-            
-            $("h2").mouseout(function() {
-                $(this).css("color", "purple");
-            });
+    // Show / Hide Motivation (photos section)
+    $("#showMotivation").click(function () {
+        $("#motivation").slideToggle();
+    });
 
-        });
+    // Hover effect for all h2 titles
+    $("h2").mouseover(function () {
+        $(this).css("color", "black");
+    });
 
-        // JavaScript Function
-        function changeMessage() {
-            document.getElementById("goalMessage").innerHTML =
-            "This class helped me improve my creativity and web development skills.";
-        }
+    $("h2").mouseout(function () {
+        $(this).css("color", "purple");
+    });
 
-        $("#showMotivation").click(function () {
-            $("#motivation").slideToggle();
-        });
+});
+
+
+function changeMessage() {
+    document.getElementById("Message").innerHTML =
+        "This class helped me improve my creativity, problem-solving, and web development skills. I feel more confident building interactive websites.";
+}
