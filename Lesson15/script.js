@@ -31,7 +31,7 @@ $(document).ready(function () {
         $("#formMessage")
             .text("Thank you! Your message has been sent.")
             .css({
-                "color": "green",
+                "color": "light purple",
                 "margin-top": "10px",
                 "font-weight": "bold"
             });
