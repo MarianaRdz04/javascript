@@ -43,6 +43,6 @@ $(document).ready(function () {
 
 function changeMotivation() {
     document.getElementById("motivationText").innerHTML =
-        "My biggest motivation is to keep growing in technology and engineering so I can create solutions that help people and make a positive impact in the world.";
+        "I have always wanted to be someone who helps others, and in technology, I found the perfect tool to achieve that. I’ve learned that engineering is not just about circuits or code, but a way to improve our everyday environment. Being a woman in this industry is not always easy, but that reality is exactly what motivates me to keep growing and to demonstrate the impact we can create";
 }
 
