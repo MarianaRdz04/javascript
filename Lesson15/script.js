@@ -11,11 +11,11 @@
             });
 
             $("h2").mouseover(function() {
-                $(this).css("color", "pink");
+                $(this).css("color", "black");
             });
             
             $("h2").mouseout(function() {
-                $(this).css("color", "darkpurple");
+                $(this).css("color", "purple");
             });
 
         });
