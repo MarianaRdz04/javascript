@@ -24,6 +24,7 @@ $(document).ready(function () {
         $(this).css("color", "purple");
     });
 
+    // Message of submit the form
     $("#contactForm").submit(function (event) {
         event.preventDefault();
 
@@ -40,8 +41,8 @@ $(document).ready(function () {
 
 });
 
-
-function changeMessage() {
-    document.getElementById("Message").innerHTML =
-        "This class helped me improve my creativity, problem-solving, and web development skills. I feel more confident building interactive websites.";
+function changeMotivation() {
+    document.getElementById("motivationText").innerHTML =
+        "My biggest motivation is to keep growing in technology and engineering so I can create solutions that help people and make a positive impact in the world.";
 }
+
