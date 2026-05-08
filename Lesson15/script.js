@@ -25,3 +25,7 @@
             document.getElementById("goalMessage").innerHTML =
             "This class helped me improve my creativity and web development skills.";
         }
+
+        $("#showMotivation").click(function () {
+            $("#motivation").slideToggle();
+        });

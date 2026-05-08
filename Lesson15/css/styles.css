@@ -66,6 +66,24 @@ main {
     margin: 0 auto;
 }
 
+.photo-gallery {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.photo-gallery img {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
 footer {
     background-color: #322771;
     color: #ffffff;
