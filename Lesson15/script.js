@@ -24,11 +24,18 @@ $(document).ready(function () {
         $(this).css("color", "purple");
     });
 
-     $("form").submit(function (event) {
-        event.preventDefault(); // stops page reload
+    $("#contactForm").submit(function (event) {
+        event.preventDefault();
 
-        alert("Message sent successfully!");
-        this.reset(); // clears the form
+        $("#formMessage")
+            .text("Thank you! Your message has been sent.")
+            .css({
+                "color": "green",
+                "margin-top": "10px",
+                "font-weight": "bold"
+            });
+
+        this.reset();
     });
 
 });
