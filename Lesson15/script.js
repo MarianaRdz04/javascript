@@ -24,6 +24,13 @@ $(document).ready(function () {
         $(this).css("color", "purple");
     });
 
+     $("form").submit(function (event) {
+        event.preventDefault(); // stops page reload
+
+        alert("Message sent successfully!");
+        this.reset(); // clears the form
+    });
+
 });
 
 
